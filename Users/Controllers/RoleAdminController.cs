@@ -7,9 +7,11 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Users.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Users.Controllers
 {
+    [Authorize(Roles ="Admins")]
     public class RoleAdminController : Controller
     {
         private RoleManager<IdentityRole> roleManager;

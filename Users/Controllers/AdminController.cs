@@ -2,10 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Users.Models;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Users.Controllers
 {
-
+    [Authorize(Roles ="Admins")]
     public class AdminController : Controller
     {
         private UserManager<AppUser> userManager;

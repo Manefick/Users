@@ -50,6 +50,7 @@ namespace Users
             app.UseAuthentication();
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
+            AppIdentityDbContext.CreateAdminAccount(app.ApplicationServices, Configuration).Wait();
         }
     }
 }
